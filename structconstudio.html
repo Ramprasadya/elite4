@@ -43,68 +43,84 @@
     </script>
     <style>
       @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .animate-fade-in {
-      animation: fadeIn 0.8s ease-out forwards;
+        animation: fadeIn 0.8s ease-out forwards;
       }
       .hero-gradient {
-      background: linear-gradient(90deg, rgba(247, 148, 29, 0.9) 0%, rgba(247, 148, 29, 0.7) 50%, rgba(247, 148, 29, 0.4) 100%);
+        background: linear-gradient(
+          90deg,
+          rgba(247, 148, 29, 0.9) 0%,
+          rgba(247, 148, 29, 0.7) 50%,
+          rgba(247, 148, 29, 0.4) 100%
+        );
       }
     </style>
     <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
       body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
       }
       /* Style removed as it's now handled inline */
       .service-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .service-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: scale(1.03);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
       .testimonial-card {
-      transition: transform 0.3s ease;
+        transition: transform 0.3s ease;
       }
       .testimonial-card:hover {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
       }
       input[type="number"]::-webkit-inner-spin-button,
       input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+        -webkit-appearance: none;
+        margin: 0;
       }
       .portfolio-item {
-      overflow: hidden;
+        overflow: hidden;
       }
       .portfolio-item img {
-      transition: transform 0.5s ease;
+        transition: transform 0.5s ease;
       }
       .portfolio-item:hover img {
-      transform: scale(1.05);
+        transform: scale(1.05);
       }
       .portfolio-overlay {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      background: rgba(247, 148, 29, 0.8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: rgba(247, 148, 29, 0.8);
       }
       .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
+        opacity: 1;
       }
     </style>
   </head>
   <body class="bg-white">
-       <script>
-    let url = "https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/13f0f75311357b249adf708678e6243f.png"
-    window.addEventListener("DOMContentLoaded",()=>{
-        document.getElementById("myImage").src = url
-        localStorage.setItem("myImage",url)
-    })
-
+    <script>
+      let url =
+        "https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/13f0f75311357b249adf708678e6243f.png";
+      window.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".myImage");
+        images.forEach((img) => {
+          img.src = url;
+        });
+        localStorage.setItem("myImage", url);
+      });
     </script>
     <!-- Navigation Bar -->
     <header
@@ -113,25 +129,24 @@
       <div
         class="container mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <a href="#" class="h-[60px] flex items-center">
+        <a href="structconstudio.html" class="h-[60px] flex items-center">
           <img
-           id="myImage"
             src=""
             alt="Elite Structcon Studio Logo"
-            class="h-full"
+            class="h-full myImage"
           />
         </a>
         <!-- Desktop Navigation -->
         <nav
           class="hidden md:flex items-center justify-center space-x-10 flex-1 px-8"
         >
-          <a
+          <!-- <a
             href="#"
             class="font-semibold text-gray-800 hover:text-primary transition-colors text-[15px] tracking-wide"
             >Home</a
-          >
+          > -->
           <a
-            href="./aboutus.html"
+            href="../page/aboutus.html?from=studio"
             class="font-semibold text-gray-800 hover:text-primary transition-colors text-[15px] tracking-wide"
             >About Us</a
           >
@@ -146,12 +161,17 @@
             >Services</a
           > -->
           <a
-            href="./careers.html"
+            href="../page/gallery.html?from=studio"
+            class="font-semibold text-gray-800 hover:text-primary transition-colors text-[15px] tracking-wide"
+            >Gallery</a
+          >
+          <a
+            href="../page/careers.html?from=studio"
             class="font-semibold text-gray-800 hover:text-primary transition-colors text-[15px] tracking-wide"
             >Careers</a
           >
           <a
-            href="./contactus.html"
+            href="../page/contactus.html?from=studio"
             class="font-semibold text-gray-800 hover:text-primary transition-colors text-[15px] tracking-wide"
             >Contact Us</a
           >
@@ -159,12 +179,12 @@
         <!-- Desktop CTA Buttons -->
         <div class="hidden md:flex items-center space-x-4">
           <a
-            href="#"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSedOxVdlBScF4mcvAEL16t9YG_Ect1InCt6seVVsxDUBLoS8g/viewform?usp=dialog"
             class="px-5 py-2.5 border-2 border-primary text-primary font-semibold rounded-button hover:bg-primary/5 transition-all duration-300 whitespace-nowrap"
             >Get Started</a
           >
           <a
-            href="#contact"
+            href="../page/contactus.html?from=studio"
             class="px-5 py-2.5 bg-primary text-white font-semibold rounded-button hover:shadow-lg hover:bg-primary/95 transition-all duration-300 whitespace-nowrap"
             >Contact Us</a
           >
@@ -183,13 +203,13 @@
         class="hidden md:hidden bg-white shadow-lg absolute w-full"
       >
         <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-          <a
+          <!-- <a
             href="#"
             class="font-medium text-gray-900 hover:text-primary transition-colors py-2"
             >Home</a
-          >
+          > -->
           <a
-            href="aboutus.html"
+            href="aboutus.html?from=studio"
             class="font-medium text-gray-900 hover:text-primary transition-colors py-2"
             >About Us</a
           >
@@ -204,23 +224,28 @@
             >Gallery</a
           > -->
           <a
-            href="./careers.html"
+            href="../page/gallery.html?from=studio"
+            class="font-medium text-gray-900 hover:text-primary transition-colors py-2"
+            >Gallery</a
+          >
+          <a
+            href="../page/careers.html?from=studio"
             class="font-medium text-gray-900 hover:text-primary transition-colors py-2"
             >Careers</a
           >
           <a
-            href="./contactus.html"
+            href="../page/contactus.html?from=studio"
             class="font-medium text-gray-900 hover:text-primary transition-colors py-2"
             >Contact Us</a
           >
           <div class="flex flex-col space-y-3 pt-2">
             <a
-              href="#"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSedOxVdlBScF4mcvAEL16t9YG_Ect1InCt6seVVsxDUBLoS8g/viewform?usp=dialog"
               class="px-4 py-2 border border-primary text-primary font-medium rounded-button hover:bg-primary hover:text-white transition-colors text-center whitespace-nowrap"
               >Get Started</a
             >
             <a
-              href="./contactus.html"
+              href="../page/contactus.html?from=studio"
               class="px-4 py-2 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors text-center whitespace-nowrap"
               >Contact Us</a
             >
@@ -261,7 +286,7 @@
             </p>
             <div class="flex flex-wrap justify-center gap-6 mb-14">
               <a
-                href="./contactus.html"
+                href="../page/contactus.html?from=studio"
                 class="group px-8 py-4 bg-white text-primary font-semibold rounded-button hover:bg-white/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap shadow-lg flex items-center"
               >
                 Start Your Project
@@ -761,15 +786,15 @@
                 <h3 class="text-xl font-semibold mb-4">Our Office</h3>
                 <div class="flex items-start mb-4">
                   <div
-                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 mt-1"
+                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
                   >
                     <i class="ri-map-pin-line text-primary"></i>
                   </div>
                   <div>
                     <p class="text-gray-700">
-                      1234 Design Avenue, Creative District
+                      PMHH+6CP Talegaon Dabhade, Maharashtra
                     </p>
-                    <p class="text-gray-700">New York, NY 10001</p>
+                    <!-- <p class="text-gray-700">New York, NY 10001</p> -->
                   </div>
                 </div>
                 <div class="flex items-start mb-4">
@@ -779,7 +804,7 @@
                     <i class="ri-phone-line text-primary"></i>
                   </div>
                   <div>
-                    <p class="text-gray-700">+1 (555) 123-4567</p>
+                    <p class="text-gray-700">+91 99700 704157</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -920,13 +945,13 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div class="flex flex-wrap justify-between gap-y-10 mb-12 text-left">
+          <div class="w-full sm:w-[48%] lg:w-[23%] max-w-[280px]">
             <a href="#" class="h-[60px] flex items-center mb-6">
               <img
-                src="https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/13f0f75311357b249adf708678e6243f.png"
+                src=""
                 alt="Elite Structcon Studio Logo"
-                class="h-full"
+                class="h-full myImage"
               />
             </a>
             <p class="text-gray-400 mb-6">
@@ -961,54 +986,62 @@
               </a>
             </div>
           </div>
-          <div>
+
+          <div class="w-full lg:w-[23%] max-w-[300px] text-center">
             <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
             <ul class="space-y-3">
               <li>
-                <a
+                <!-- <a
                   href="#"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Home</a
-                >
+                > -->
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="aboutus.html?from=studio"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >About Us</a
                 >
               </li>
               <li>
                 <a
+                  href="gallery.html?from=studio"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Project Gallery</a
+                >
+              </li>
+              <!-- <li>
+                <a
                   href="#services"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Services</a
                 >
-              </li>
-              <li>
+              </li> -->
+              <!-- <li>
                 <a
                   href="#portfolio"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Portfolio</a
                 >
-              </li>
+              </li> -->
               <li>
                 <a
-                  href="#"
+                  href="careers.html?from=studio"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Careers</a
                 >
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="contactus.html?from=studio"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Contact</a
                 >
               </li>
             </ul>
           </div>
-          <div>
+          <div class="w-full sm:w-[48%] lg:w-[23%] max-w-[240px]">
             <h3 class="text-lg font-semibold mb-6">Services</h3>
             <ul class="space-y-3">
               <li>
@@ -1055,7 +1088,52 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="w-full sm:w-[48%] lg:w-[23%] max-w-[260px]">
+            <h3 class="text-white font-semibold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3">
+                <i class="ri-map-pin-line mt-1 text-primary"></i>
+                <span class="text-gray-400"
+                  >PMHH+6CP Talegaon Dabhade, Maharashtra</span
+                >
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="ri-map-pin-line mt-1 text-primary"></i>
+                <span class="text-gray-400"
+                  >Shop B-8, First Floor, Pravia Business Center, Spine Rd,
+                  opposite RTO, Jal Vayu Vihar, Sector No. 6, PCMC,
+                  Pimpri-Chinchwad, Maharashtra 412105</span
+                >
+              </li>
+              <li class="flex flex-col gap-2 items-start">
+                <div class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-3 mt-1"
+                  >
+                    <i class="ri-phone-line text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">+91 98765 43210</span>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-3 mt-1"
+                  >
+                    <i class="ri-phone-line text-primary"></i>
+                  </div>
+                  <span class="text-gray-400">02114-22500</span>
+                </div>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="ri-mail-line text-primary"></i>
+                <span class="text-gray-400">contact@eliteenterprises.com</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="ri-time-line text-primary"></i>
+                <span class="text-gray-400">Mon - Fri: 9:00 AM - 6:00 PM</span>
+              </li>
+            </ul>
+          </div>
+          <!-- <div>
             <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
             <p class="text-gray-400 mb-4">
               Subscribe to our newsletter for the latest updates and insights.
@@ -1078,7 +1156,7 @@
             <p class="text-gray-400 text-sm">
               By subscribing, you agree to our Privacy Policy.
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="border-t border-gray-800 pt-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
@@ -1168,7 +1246,7 @@
         ];
         let currentIndex = 0;
         const testimonialsContainer = document.getElementById(
-          "testimonials-container",
+          "testimonials-container"
         );
         const prevButton = document.getElementById("prev-testimonial");
         const nextButton = document.getElementById("next-testimonial");
@@ -1259,7 +1337,7 @@
         });
       });
     </script>
-     <script>
+    <script>
       window.addEventListener("DOMContentLoaded", () => {
         // Check if function has run before
         const hasRun = localStorage.getItem("eliteUrl");

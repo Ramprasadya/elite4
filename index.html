@@ -114,17 +114,6 @@
     </style>
   </head>
   <body class="bg-white">
-    <script>
-      let url =
-        "https://firebasestorage.googleapis.com/v0/b/projects-afdbf.firebasestorage.app/o/logo%2Fstudio.png?alt=media&token=cb1eaca5-28c0-4730-a9db-92537a07823e";
-      window.addEventListener("DOMContentLoaded", () => {
-        const images = document.querySelectorAll(".myImage");
-        images.forEach((img) => {
-          img.src = url;
-        });
-        localStorage.setItem("myImage", url);
-      });
-    </script>
     <!-- Navigation Bar -->
     <header
       class="fixed top-0 left-0 w-full bg-gradient-to-b from-gray-50 to-gray-100/70 backdrop-blur-sm z-50 rounded-b-xl border-b border-gray-100"
@@ -134,6 +123,7 @@
       >
         <a href="structconstudio.html" class="h-[60px] flex items-center">
           <img
+           id="navbar"
             src=""
             alt="Elite Structcon Studio Logo"
             class="h-[140px] myImage"
@@ -941,9 +931,10 @@
           <div class="w-full sm:w-[48%] lg:w-[23%] max-w-[280px]">
             <a href="#" class="h-[60px] flex items-center mb-6">
               <img
+              id="footer"
                 src=""
                 alt="Elite Structcon Studio Logo"
-                class="h-[140px] myImage"
+                class="h-[140px] footer"
               />
             </a>
             <p class="text-gray-400 mb-6">
@@ -1351,6 +1342,22 @@
         } else {
           console.log("Not running again.");
         }
+      });
+    </script>
+     <script>
+      let url =
+        "https://firebasestorage.googleapis.com/v0/b/projects-afdbf.firebasestorage.app/o/logo%2Fstudio.png?alt=media&token=cb1eaca5-28c0-4730-a9db-92537a07823e";
+      let footer = "https://firebasestorage.googleapis.com/v0/b/projects-afdbf.firebasestorage.app/o/logo%2Fstudio%20white.png?alt=media&token=8a25caa3-75f4-42b6-b354-b10d35e64f07"
+
+      window.addEventListener("DOMContentLoaded", () => {
+        let image = document.getElementById("navbar");
+        image.src = url; // Works only for <img>
+        localStorage.setItem("navbar", url);
+      });
+      window.addEventListener("DOMContentLoaded", () => {
+        let  image = document.getElementById("footer");
+        image.src = footer; // Works only for <img>
+        localStorage.setItem("footer", url);
       });
     </script>
   </body>
